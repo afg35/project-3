@@ -15,7 +15,8 @@ let bitBatBotOrNot = (n) => {
    if (n % 3 == 0) {result = result + "Bit";}
    if (n % 5 == 0) {result = result + "Bat";}
    if (n % 7 == 0) {result = result + "Bot";}
-    else {
+
+   if (n % 3 != 0 && n % 5 != 0 && n % 7 != 0) {
       result = result + "Not";
     }
     return result;
@@ -25,22 +26,41 @@ let bitBatBotOrNot = (n) => {
 let findAllbitBatBotOrNots1 = (arr) => {
    //your code goes here
    //use map method
+   const map = arr.map(item => `${item}: ${bitBatBotOrNot(item)}`);
+   return map;
 };
 
 let findAllbitBatBotOrNots2 = (arr) => {
    //your code goes here
    //use for statement
+   let answer = [];
+   for (let i = 0; i < arr.length; i++) {
+     answer.push(`${arr[i]}: ${bitBatBotOrNot(arr[i])}`);
+   }
+   return answer;
 };
 
 let findAllbitBatBotOrNots3 = (arr) => {
    //your code goes here
    //use for..of statement
+   answer = [];
+   for (let elem of arr) {
+     answer.push(`${elem}: ${bitBatBotOrNot(elem)}`);
+   }
+return answer;
 };
 
 let findAllbitBatBotOrNots4 = (arr) => {
    //your code goes here
    //use forEach method
+   answer = [];
+   arr.forEach((elem) => {
+     answer.push(`${elem}: ${bitBatBotOrNot(elem)}`);
+   } );
+   return answer;
 };
+
+
 
 //test the functions
 
